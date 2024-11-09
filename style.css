@@ -1,0 +1,63 @@
+* {
+  margin: 0px;
+}
+body {
+  margin: 25px;
+  min-height: 100vh;
+}
+.wrapper {
+  line-height: 1;
+  display: grid;
+  grid-template-columns: min-content min-content;
+  left: 0px;
+  font-size: xx-large;
+}
+.data,
+.hidden1,
+.hidden2 {
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+}
+.data {
+  width: 1.4ch;
+}
+.wrapper:hover .trigger {
+  display: none;
+}
+.wrapper:hover .data {
+  height: 2ch;
+  margin-right: 5px;
+  animation: x-appear 0.1s linear 0s 1 normal forwards;
+}
+.wrapper:hover .hidden1 {
+  height: 2ch;
+  animation: x-appear 0.2s linear 0.1s 1 normal forwards;
+}
+.wrapper:hover .hidden2 {
+  animation: y-appear 0.2s linear 0.2s 1 normal forwards;
+}
+
+@keyframes x-appear {
+  from {
+    visibility: visible;
+  }
+  to {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+@keyframes y-appear {
+  from {
+    height: 0;
+    width: 100%;
+    visibility: visible;
+  }
+  to {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+  }
+}
